@@ -1,8 +1,8 @@
 # Opentelemetry Java Reference Architecture
 
-This repository contains an illustrative 'Boardgame Store' application, that was used to demonstrate Opentelemetry features, the current focus is the java ecosystem.
+This repository contains an illustrative 'Boardgame Store' application, that was used to demonstrate Opentelemetry features, the current focus is in the java ecosystem.
 
-> :warning: We do not pretend to replace, [opentelemetry community demo](https://github.com/open-telemetry/opentelemetry-demo), we just focused on java ecosystem and in the technologies that we use. :)
+> :warning: We do not pretend to replace the [opentelemetry community demo](https://github.com/open-telemetry/opentelemetry-demo), we just are focused on java ecosystem and in the technologies that we use. :)
 
 </br>
 
@@ -10,8 +10,8 @@ This repository contains an illustrative 'Boardgame Store' application, that was
 
 This repository has the following structure:
 
-- [applications](applications) - has the applications of boardgame store.
-- [commons](commons) - has libraries that was used in multiple applications.
+- [applications](applications) - applications that compose the Boardgame Store.
+- [commons](commons) - libraries that are used in multiple applications.
 - [docs](docs) - technical documentation.
 
 ## 📚 <a id="docs"></a>References

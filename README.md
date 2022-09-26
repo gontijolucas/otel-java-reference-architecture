@@ -1,4 +1,4 @@
-# Opentelemetry Reference Architecture
+# Opentelemetry Java Reference Architecture
 
 This repository contains an illustrative 'Boardgame Store' application, that was used to demonstrate Opentelemetry features, the current focus is the java ecosystem.
 

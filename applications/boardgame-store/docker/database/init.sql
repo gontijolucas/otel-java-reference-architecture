@@ -1,0 +1,20 @@
+-- Catalog
+CREATE SCHEMA IF NOT EXISTS catalog AUTHORIZATION bgstore;
+
+-- Cart
+CREATE SCHEMA IF NOT EXISTS cart AUTHORIZATION bgstore;
+
+-- Order
+CREATE SCHEMA IF NOT EXISTS orders AUTHORIZATION bgstore;
+
+-- Authentication
+CREATE SCHEMA IF NOT EXISTS authentication AUTHORIZATION bgstore;
+
+-- Customer
+CREATE SCHEMA IF NOT EXISTS customer AUTHORIZATION bgstore;
+
+-- Shipping
+CREATE SCHEMA IF NOT EXISTS shipping AUTHORIZATION bgstore;
+
+-- Payment
+CREATE SCHEMA IF NOT EXISTS payment AUTHORIZATION bgstore;

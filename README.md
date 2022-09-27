@@ -14,6 +14,9 @@ This repository has the following structure:
 - [commons](commons) - libraries that are used in multiple applications.
 - [docs](docs) - technical documentation.
 
+## :classical_building: Current Architecture
+![Diagram](docs/diagrams/architecture-diagram.drawio.png)
+
 ## 📚 <a id="docs"></a>References
 
 - [Opentelemetry](https://opentelemetry.io/)

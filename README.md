@@ -21,3 +21,11 @@ This repository has the following structure:
 
 - [Opentelemetry](https://opentelemetry.io/)
 - [Opentelemetry - Community Demo](https://github.com/open-telemetry/opentelemetry-demo)
+
+<br>
+
+## Thank you to all who have contributed
+
+<a href="https://github.com/gontijolucas/otel-reference-architecture/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=gontijolucas/otel-reference-architecture" />
+</a>

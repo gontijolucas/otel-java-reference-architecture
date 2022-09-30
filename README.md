@@ -6,6 +6,9 @@ This repository contains an illustrative 'Boardgame Store' application, that was
 
 </br>
 
+## :classical_building: Current Architecture
+![Diagram](docs/diagrams/architecture-diagram.drawio.png)
+
 ## 📂 <a id="repo"></a>Repository Structure
 
 This repository has the following structure:
@@ -13,9 +16,6 @@ This repository has the following structure:
 - [applications](applications) - applications that compose the Boardgame Store.
 - [commons](commons) - libraries that are used in multiple applications.
 - [docs](docs) - technical documentation.
-
-## :classical_building: Current Architecture
-![Diagram](docs/diagrams/architecture-diagram.drawio.png)
 
 ## 📚 <a id="docs"></a>References
 

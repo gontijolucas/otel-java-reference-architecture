@@ -10,6 +10,7 @@ services:
     volumes:
       - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
+      POSTGRES_DB: bgstoredb
       POSTGRES_USER: bgstore
       POSTGRES_PASSWORD: bgpass
     ports:

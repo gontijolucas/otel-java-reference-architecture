@@ -28,4 +28,4 @@ This repository has the following structure:
 
 <a href="https://github.com/gontijolucas/otel-reference-architecture/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=gontijolucas/otel-reference-architecture" />
-</a>
+</a> 

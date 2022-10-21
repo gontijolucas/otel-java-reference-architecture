@@ -12,14 +12,15 @@ import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Service
 @Validated
-public class CatalogService {
+public class CategoryService {
 
     private final CategoryRepositoryAPI categoryRepository;
 
-    public CatalogService(CategoryRepositoryAPI categoryRepository) {
+    public CategoryService(CategoryRepositoryAPI categoryRepository) {
         this.categoryRepository = categoryRepository;
     }
 
@@ -34,6 +35,11 @@ public class CatalogService {
         return categoryRepository.save(category);
     }
 
+    public List<Category> findAll() {
+        return categoryRepository.findAll();
+    }
+
+
     @Validated(OnGet.class)
     public Category findById(@Validated CategoryId categoryId) {
         return categoryRepository.findById(categoryId)
@@ -43,8 +49,8 @@ public class CatalogService {
     }
 
     @Validated(OnDelete.class)
-    public void delete(@Validated Category category) {
+    public void delete(@Validated CategoryId categoryId) {
         //TODO validar se categoria já tem produto
-        categoryRepository.delete(category);
+        categoryRepository.delete(categoryId);
     }
 }

@@ -12,7 +12,7 @@ public interface CategoryRepositoryAPI {
 
     Category save(Category category);
 
-    void delete(Category category);
+    void delete(CategoryId category);
 
     Optional<Category> findById(CategoryId categoryId);
 

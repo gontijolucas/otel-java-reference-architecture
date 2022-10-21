@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 @Repository
 public class CategoryRepository implements CategoryRepositoryAPI {
 
-    private CategoryRepositoryJPA categoryRepositoryJPA;
+    private final CategoryRepositoryJPA categoryRepositoryJPA;
 
     public CategoryRepository(CategoryRepositoryJPA categoryRepositoryJPA) {
         this.categoryRepositoryJPA = categoryRepositoryJPA;
@@ -34,8 +34,11 @@ public class CategoryRepository implements CategoryRepositoryAPI {
     }
 
     @Override
-    public void delete(Category category) {
-        categoryRepositoryJPA.deleteById(category.getId().getValue());
+    public void delete(CategoryId categoryId) {
+        Objects.requireNonNull(categoryId, "Category 'id' cannot be null");
+        Objects.requireNonNull(categoryId.getValue(), "Category 'id' value cannot be null");
+
+        categoryRepositoryJPA.deleteById(categoryId.getValue());
     }
 
     @Override

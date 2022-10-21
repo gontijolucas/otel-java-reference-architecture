@@ -19,6 +19,13 @@ public class Category {
     @NotEmpty
     private String name;
 
+    public Category() {
+    }
+
+    public Category(CategoryId id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 
     public CategoryId getId() {
         return id;

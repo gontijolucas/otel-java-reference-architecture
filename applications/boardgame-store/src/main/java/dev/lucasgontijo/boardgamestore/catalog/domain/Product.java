@@ -10,6 +10,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Null;
 import javax.validation.constraints.Positive;
+import java.math.BigDecimal;
 
 public class Product {
 
@@ -37,6 +38,10 @@ public class Product {
     @NotNull
     @Positive
     private Integer playTime;
+
+    @NotNull
+    @Positive
+    private BigDecimal price;
 
     private Category category;
 
@@ -102,5 +107,13 @@ public class Product {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 }

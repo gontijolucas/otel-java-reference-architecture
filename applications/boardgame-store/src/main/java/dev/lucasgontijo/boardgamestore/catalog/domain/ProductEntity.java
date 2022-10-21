@@ -1,6 +1,7 @@
 package dev.lucasgontijo.boardgamestore.catalog.domain;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity(name = "Product")
 @Table(name = "product", schema = "catalog")
@@ -28,9 +29,12 @@ public class ProductEntity {
     @Column(name = "play_time", nullable = false)
     private Integer playTime;
 
+    @Column
+    private BigDecimal price;
+
     @ManyToOne
     @JoinColumn(name = "category_id")
-    private CategoryEntity categoryEntity;
+    private CategoryEntity category;
 
     public ProductEntity() {
     }
@@ -91,11 +95,19 @@ public class ProductEntity {
         this.playTime = playTime;
     }
 
-    public CategoryEntity getCategoryEntity() {
-        return categoryEntity;
+    public CategoryEntity getCategory() {
+        return category;
     }
 
-    public void setCategoryEntity(CategoryEntity categoryEntity) {
-        this.categoryEntity = categoryEntity;
+    public void setCategory(CategoryEntity category) {
+        this.category = category;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 }

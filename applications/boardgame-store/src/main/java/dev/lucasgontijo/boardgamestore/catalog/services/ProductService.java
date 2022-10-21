@@ -1,9 +1,11 @@
 package dev.lucasgontijo.boardgamestore.catalog.services;
 
+import dev.lucasgontijo.boardgamestore.catalog.domain.Category;
 import dev.lucasgontijo.boardgamestore.catalog.domain.CategoryId;
 import dev.lucasgontijo.boardgamestore.catalog.domain.Product;
 import dev.lucasgontijo.boardgamestore.catalog.domain.ProductId;
 import dev.lucasgontijo.boardgamestore.catalog.domain.errors.ProductNotFoundException;
+import dev.lucasgontijo.boardgamestore.catalog.repository.CategoryRepository;
 import dev.lucasgontijo.boardgamestore.catalog.repository.ProductRepository;
 import dev.lucasgontijo.boardgamestore.commons.validation.OnCreate;
 import dev.lucasgontijo.boardgamestore.commons.validation.OnGet;
@@ -18,9 +20,11 @@ public class ProductService {
 
 
     private final ProductRepository productRepository;
+    private final CategoryService categoryService;
 
-    public ProductService(ProductRepository productRepository) {
+    public ProductService(ProductRepository productRepository, CategoryService categoryService) {
         this.productRepository = productRepository;
+        this.categoryService = categoryService;
     }
 
     @Validated(OnCreate.class)

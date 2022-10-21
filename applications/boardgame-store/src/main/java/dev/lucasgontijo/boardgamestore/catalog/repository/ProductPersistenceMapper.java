@@ -14,6 +14,7 @@ public class ProductPersistenceMapper {
         product.setEditor(entity.getEditor());
         product.setName(entity.getName());
         product.setPlayerNumber(entity.getPlayerNumber());
+        product.setPlayTime(entity.getPlayTime());
         product.setPrice(entity.getPrice());
         product.setSku(entity.getSku());
         product.setCategory(CategoryPersistenceMapper.toDomain(entity.getCategory()));

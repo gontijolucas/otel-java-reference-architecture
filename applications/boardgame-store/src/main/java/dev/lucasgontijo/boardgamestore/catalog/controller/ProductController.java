@@ -21,26 +21,26 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @GetMapping(params = { "page", "size" })
-    public ResponseEntity<Page<ProductRepresentation>> findAll(@RequestParam("page") int pageNumber,
-                                                 @RequestParam("size") int pageSize) {
+    @GetMapping
+    public ResponseEntity<Page<ProductRepresentation>> findAll(@RequestParam(value = "page", defaultValue = "0", required = false) int pageNumber,
+                                                 @RequestParam(value = "size", defaultValue = "10", required = false) int pageSize) {
 
         Page<Product> all = productService.findAll(pageNumber, pageSize);
         return ResponseEntity.ok(all.map(ProductRepresentationMapper::toProductRepresentation));
     }
 
 
-    @GetMapping(path = "/category/{id}", params = { "page", "size" })
-    public ResponseEntity<Page<ProductRepresentation>> findAllByCategory(@RequestParam(value = "page", defaultValue = "0") int pageNumber,
-                                                           @RequestParam(value = "size", defaultValue = "10") int pageSize,
-                                                           @PathParam("id") Long categoryId) {
+    @GetMapping(path = "/category/{id}")
+    public ResponseEntity<Page<ProductRepresentation>> findAllByCategory(@RequestParam(value = "page", defaultValue = "0", required = false) int pageNumber,
+                                                           @RequestParam(value = "size", defaultValue = "10", required = false) int pageSize,
+                                                           @PathVariable("id") Long categoryId) {
 
         Page<Product> all = productService.findAllByCategoryId(pageNumber, pageSize, new CategoryId(categoryId));
         return ResponseEntity.ok(all.map(ProductRepresentationMapper::toProductRepresentation));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ProductRepresentation> findById(@PathParam("id") Long id) {
+    public ResponseEntity<ProductRepresentation> findById(@PathVariable("id") Long id) {
         ProductId productId = new ProductId(id);
 
         Product product = productService.findById(productId);

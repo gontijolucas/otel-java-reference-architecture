@@ -1,9 +1,6 @@
 package dev.lucasgontijo.boardgamestore.catalog.repository;
 
-import dev.lucasgontijo.boardgamestore.catalog.domain.CategoryId;
-import dev.lucasgontijo.boardgamestore.catalog.domain.Product;
-import dev.lucasgontijo.boardgamestore.catalog.domain.ProductEntity;
-import dev.lucasgontijo.boardgamestore.catalog.domain.ProductId;
+import dev.lucasgontijo.boardgamestore.catalog.domain.*;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -16,9 +13,11 @@ import java.util.Optional;
 public class ProductRepository implements ProductRepositoryAPI {
 
     private final ProductRepositoryJPA productRepositoryJPA;
+    private final CategoryRepositoryJPA categoryRepositoryJPA;
 
-    public ProductRepository(ProductRepositoryJPA productRepositoryJPA) {
+    public ProductRepository(ProductRepositoryJPA productRepositoryJPA, CategoryRepositoryJPA categoryRepositoryJPA) {
         this.productRepositoryJPA = productRepositoryJPA;
+        this.categoryRepositoryJPA = categoryRepositoryJPA;
     }
 
     @Override
@@ -43,7 +42,8 @@ public class ProductRepository implements ProductRepositoryAPI {
 
         Pageable pageRequest = PageRequest.of(pageNumber, pageSize);
 
-        return productRepositoryJPA.findAllByCategory(categoryId.getValue(), pageRequest);
+        CategoryEntity category = categoryRepositoryJPA.findById(categoryId.getValue()).orElse(null);
+        return productRepositoryJPA.findAllByCategory(category, pageRequest);
 
     }
 

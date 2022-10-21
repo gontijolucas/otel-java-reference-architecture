@@ -1,5 +1,6 @@
 package dev.lucasgontijo.boardgamestore.catalog.repository;
 
+import dev.lucasgontijo.boardgamestore.catalog.domain.CategoryEntity;
 import dev.lucasgontijo.boardgamestore.catalog.domain.Product;
 import dev.lucasgontijo.boardgamestore.catalog.domain.ProductEntity;
 import org.springframework.data.domain.Page;
@@ -11,6 +12,6 @@ import org.springframework.stereotype.Repository;
 
 public interface ProductRepositoryJPA extends JpaRepository<ProductEntity, Long> {
 
-    Page<Product> findAllByCategory(Long categoryId, Pageable pageRequest);
+    Page<Product> findAllByCategory(CategoryEntity categoryEntity, Pageable pageRequest);
 
 }

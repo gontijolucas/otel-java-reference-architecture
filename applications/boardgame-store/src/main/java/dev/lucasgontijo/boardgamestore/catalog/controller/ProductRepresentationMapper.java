@@ -11,6 +11,7 @@ public class ProductRepresentationMapper {
         product.setEditor(productRepresentation.editor());
         product.setName(productRepresentation.name());
         product.setPlayerNumber(productRepresentation.playerNumber());
+        product.setPlayTime(productRepresentation.playTime());
         product.setPrice(productRepresentation.price());
         product.setSku(productRepresentation.sku());
         Category category = new Category();

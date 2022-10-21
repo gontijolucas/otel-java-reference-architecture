@@ -2,6 +2,7 @@ package dev.lucasgontijo.boardgamestore.catalog.services;
 
 import dev.lucasgontijo.boardgamestore.catalog.domain.Category;
 import dev.lucasgontijo.boardgamestore.catalog.domain.CategoryId;
+import dev.lucasgontijo.boardgamestore.catalog.domain.errors.CategoryAlreadyExistsException;
 import dev.lucasgontijo.boardgamestore.catalog.domain.errors.CategoryNotFoundException;
 import dev.lucasgontijo.boardgamestore.catalog.repository.CategoryRepositoryAPI;
 import dev.lucasgontijo.boardgamestore.commons.validation.OnCreate;
@@ -27,6 +28,12 @@ public class CategoryService {
 
     @Validated(OnCreate.class)
     public Category create(@Valid Category category) {
+        boolean exsits = categoryRepository.existsByName(category.getName());
+
+        if(exsits) {
+            throw new CategoryAlreadyExistsException(String.format("Category %s already exists", category.getName()));
+        }
+
         return categoryRepository.save(category);
     }
 

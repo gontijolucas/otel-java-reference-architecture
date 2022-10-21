@@ -16,5 +16,7 @@ public interface CategoryRepositoryAPI {
 
     Optional<Category> findById(CategoryId categoryId);
 
+    boolean existsByName(String name);
+
 
 }

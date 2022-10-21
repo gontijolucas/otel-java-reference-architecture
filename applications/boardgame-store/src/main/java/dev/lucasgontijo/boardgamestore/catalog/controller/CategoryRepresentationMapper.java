@@ -8,7 +8,7 @@ public class CategoryRepresentationMapper {
 
     public static Category toDomain(CategoryRepresentation categoryRepresentation) {
         return new Category(
-                new CategoryId(categoryRepresentation.id()),
+                categoryRepresentation.id() != null ? new CategoryId(categoryRepresentation.id()) : null,
                 categoryRepresentation.name()
         );
     }

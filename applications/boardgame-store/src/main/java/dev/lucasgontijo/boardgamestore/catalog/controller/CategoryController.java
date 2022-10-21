@@ -29,12 +29,12 @@ public class CategoryController {
     }
 
     @PostMapping
-    public ResponseEntity<Category> create(@RequestBody CategoryRepresentation categoryRepresentation) {
+    public ResponseEntity<CategoryRepresentation> create(@RequestBody CategoryRepresentation categoryRepresentation) {
         Category category = CategoryRepresentationMapper.toDomain(categoryRepresentation);
 
         Category createdCategory = categoryService.create(category);
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(createdCategory);
+        return ResponseEntity.status(HttpStatus.CREATED).body(CategoryRepresentationMapper.toRepresentation(createdCategory));
     }
 
 

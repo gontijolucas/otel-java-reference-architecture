@@ -50,4 +50,9 @@ public class CategoryRepository implements CategoryRepositoryAPI {
         return categoryRepositoryJPA.findById(categoryId.getValue())
                 .map(CategoryPersistenceMapper::toDomain);
     }
+
+    @Override
+    public boolean existsByName(String name) {
+        return categoryRepositoryJPA.existsByName(name);
+    }
 }

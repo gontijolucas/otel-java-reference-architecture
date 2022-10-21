@@ -7,12 +7,13 @@ import dev.lucasgontijo.boardgamestore.commons.validation.OnUpdate;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Null;
 
 public class Category {
 
     @Null(groups = OnCreate.class)
-    @NotEmpty(groups = { OnGet.class, OnUpdate.class, OnDelete.class })
+    @NotNull(groups = { OnGet.class, OnUpdate.class, OnDelete.class })
     @Valid
     private CategoryId id;
 

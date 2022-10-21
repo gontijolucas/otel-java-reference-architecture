@@ -16,7 +16,7 @@ class CategoryPersistenceMapper {
     public static CategoryEntity toEntity(Category category) {
         CategoryEntity categoryEntity = new CategoryEntity();
         categoryEntity.setId(category.getId() == null ? null : category.getId().getValue());
-        categoryEntity.setName(categoryEntity.getName());
+        categoryEntity.setName(category.getName());
         return categoryEntity;
     }
 }

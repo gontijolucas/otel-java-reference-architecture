@@ -1,11 +1,10 @@
 package dev.lucasgontijo.boardgamestore.catalog.domain;
 
-import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 public class CategoryId {
 
-
-    @NotEmpty
+    @NotNull
     private Long value;
 
     public CategoryId() {
